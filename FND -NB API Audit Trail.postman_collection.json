@@ -1,0 +1,94 @@
+{
+	"info": {
+		"_postman_id": "d855f669-9328-498e-bca2-b4c42e964df1",
+		"name": "FND -NB API Audit Trail",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Audit Trail",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "cisco",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "ami",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version = \"1.0\"?>\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:aud=\"http://audittrail.nbapi.cgms.cisco.com/\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <aud:getAuditTrailsByUser>\n         <!--Optional:-->\n         <userName>UserName</userName>\n         <startTimeInMs>Start Time</startTimeInMs>\n         <endTimeInMs>End time</endTimeInMs>\n      </aud:getAuditTrailsByUser>\n   </soapenv:Body>\n</soapenv:Envelope>"
+				},
+				"url": {
+					"raw": "https://10.10.20.70/nbapi/audittrail",
+					"protocol": "https",
+					"host": [
+						"10",
+						"10",
+						"20",
+						"70"
+					],
+					"path": [
+						"nbapi",
+						"audittrail"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "cisco",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "ami",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "996ed05c-730f-45ba-8798-a52ed64981aa",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "5564b2f7-b2f8-401e-834c-0112bb99cd8a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,94 @@
+{
+	"info": {
+		"_postman_id": "47ad3955-02c7-456a-9388-9af14a237a4a",
+		"name": "FND-NB API - Search",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Search",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "cisco",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "ami",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version = \"1.0\"?>\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:sear=\"http://search.nbapi.cgms.cisco.com/\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <sear:getDeviceDetails>\n         \n         <!--Zero or more repetitions:-->\n         <deviceIds><Add Device ID></deviceIds>\n \n         <count>5</count>\n         <offset>0</offset>\n      </sear:getDeviceDetails>\n   </soapenv:Body>\n</soapenv:Envelope>"
+				},
+				"url": {
+					"raw": "https://10.10.20.70/nbapi/search",
+					"protocol": "https",
+					"host": [
+						"10",
+						"10",
+						"20",
+						"70"
+					],
+					"path": [
+						"nbapi",
+						"search"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "cisco",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "ami",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "6573d06e-7e70-44a7-9cca-ee73ccf1945f",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "2fe1aeb7-1959-4417-9aa7-67300752a2e5",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
